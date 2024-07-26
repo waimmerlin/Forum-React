@@ -87,11 +87,23 @@ function Register() {
             {(values.errors && showModal) && (
                 <ErrorBlock errorMessage={values.errors.email ? values.errors.email : values.errors.password} handleModalClose={handleModalClose} />
             )}
-            <div class="container">
-                <div class="login__container">
+            <div className="container">
+                <div className="login__container">
                     <h2>Register</h2>
                     <form onSubmit={handleRegister}>
-                        <div class="form-group">
+                    <div className="form-group">
+                        <input 
+                                type="text" 
+                                placeholder="Username" 
+                                value={values.username}
+                                onChange={handleInput}
+                                autoComplete="off"
+                                name="username"
+                                id="username"
+                            />
+                        </div>
+
+                        <div className="form-group">
                             <input 
                                 type="email" 
                                 placeholder="Email address" 
@@ -102,7 +114,8 @@ function Register() {
                                 id="email"
                             />
                         </div>
-                        <div class="form-group">
+                        
+                        <div className="form-group">
                             <input 
                                 type="password" 
                                 placeholder="Password"
@@ -113,14 +126,26 @@ function Register() {
                                 id="password"
                             />
                         </div>
-                        <div class="checkbox-group">
-                            <label for="remember-me">
-                                <input type="checkbox" id="remember-me" checked={values.checked} onChange={handleChange} /> Remember me
-                            </label>
-                            <a href="#">Forgot password?</a>
+
+                        <div className="form-group">
+                            <input
+                                type="password"
+                                value={values.confirmPassword}
+                                onChange={handleInput}
+                                placeholder="Confirm Password"
+                                autoComplete="off"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                            />
                         </div>
-                        <p class="signup">Don't have an account? <Link to={'/login'}>Signin</Link></p>
-                        <button class="submit-button" type="submit">Login</button>
+                        <div className="checkbox-group">
+                            <label for="remember-me">
+                                <input type="checkbox" id="remember-me" checked={values.checked} onChange={handleChange} /> I agree to the Terms of Use
+                            </label>
+                            <a href="#">Terms of Use</a>
+                        </div>
+                        <p className="signup">Already have an account? <Link to={'/login'}>Signin</Link></p>
+                        <button className="submit-button" type="submit">Register</button>
                     </form>
                 </div>                
             </div>

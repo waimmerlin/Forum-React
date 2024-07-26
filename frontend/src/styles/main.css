@@ -16,3 +16,11 @@ body{
     background-color: #1a202c;
     overflow-x: hidden;
 }
+
+a {
+    color: var(--link-color); /* blue link color */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

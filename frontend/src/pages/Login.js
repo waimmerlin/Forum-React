@@ -74,11 +74,11 @@ function Login() {
             {(values.errors && showModal) && (
                 <ErrorBlock errorMessage={values.errors.email ? values.errors.email : values.errors.password} handleModalClose={handleModalClose} />
             )}
-            <div class="container">
-                <div class="login__container">
+            <div className="container">
+                <div className="login__container">
                     <h2>Login</h2>
                     <form onSubmit={handleLogin}>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input 
                                 type="email" 
                                 placeholder="Email address" 
@@ -89,7 +89,7 @@ function Login() {
                                 id="email"
                             />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input 
                                 type="password" 
                                 placeholder="Password"
@@ -100,14 +100,14 @@ function Login() {
                                 id="password"
                             />
                         </div>
-                        <div class="checkbox-group">
+                        <div className="checkbox-group">
                             <label for="remember-me">
                                 <input type="checkbox" id="remember-me" checked={values.checked} onChange={handleChange} /> Remember me
                             </label>
                             <a href="#">Forgot password?</a>
                         </div>
-                        <p class="signup">Don't have an account? <Link to={'/register'}>Signup</Link></p>
-                        <button class="submit-button" type="submit">Login</button>
+                        <p className="signup">Don't have an account? <Link to={'/register'}>Signup</Link></p>
+                        <button className="submit-button" type="submit">Login</button>
                     </form>
                 </div>                
             </div>
