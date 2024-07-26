@@ -1,0 +1,18 @@
+*, html{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --text-color: #e2e8f0;
+    --link-color: #4299e1;
+    --containers-bg: #2d3748;
+}
+body{
+    width: 80%;
+    margin-inline: auto;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #1a202c;
+    overflow-x: hidden;
+}

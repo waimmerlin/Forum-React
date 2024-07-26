@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (data) => {
     setUser(data);
-    navigate('/cabinet');
+    navigate('/profile');
     setLoading(false);
   };
 

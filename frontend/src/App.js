@@ -1,6 +1,10 @@
 import React from "react";
-import Home from "../pages/Home";
-import Register from "../pages/Register";
+import { Routes, Route } from "react-router-dom"
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Header from "./components/Header";
+import Login from "./pages/Login";
+
 import { AuthProvider } from './hooks/useAuth';
 import { ProtectedRoute, ProtectedRouteForAuth } from './components/ProtectedRoute';
 
@@ -19,6 +23,15 @@ function App() {
           element={
             <ProtectedRouteForAuth>
               <Register />
+            </ProtectedRouteForAuth>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <ProtectedRouteForAuth>
+              <Login />
             </ProtectedRouteForAuth>
           }
         />

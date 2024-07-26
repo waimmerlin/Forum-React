@@ -1,0 +1,90 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login__container {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--containers-bg); /* dark gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+.login__container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: var(--text-color); /* light gray color */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group input::placeholder {
+    color: #9CA3AF;
+}
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    background-color: #4a5568; /* darker gray background */
+    color: var(--text-color); /* light gray text color */
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 16px;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    background-color: var(--containers-bg); /* even darker gray background */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6); /* blue outline */
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+.checkbox-group label {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+.checkbox-group a {
+    font-size: 0.875rem;
+    color: var(--link-color); /* blue link color */
+    text-decoration: none;
+}
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+.signup {
+    font-size: 0.875rem;
+    color: var(--text-color); /* light gray text color */
+    margin: 16px 0;
+}
+.signup a {
+    color: var(--link-color); /* blue link color */
+    text-decoration: none;
+}
+.signup a:hover {
+    text-decoration: underline;
+}
+.submit-button {
+    background: linear-gradient(to right, #667eea, #3182ce); /* gradient background */
+    color: #fff; /* white text */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+    width: 100%;
+}
+.submit-button:hover {
+    background: linear-gradient(to right, #5a67d8, #2b6cb0); /* darker gradient background */
+}
