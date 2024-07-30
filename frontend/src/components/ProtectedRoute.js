@@ -9,7 +9,7 @@ export const ProtectedRoute = ({ children, allowedRoles }) => {
   if (loading) {
     return <Spinner />;
   }
-
+  
   if (Cookies.get('Refresh_token')) {
     Cookies.get('Access_token') ?? refreshToken();
   } else {

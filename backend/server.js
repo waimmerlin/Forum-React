@@ -24,6 +24,15 @@ const PORT = process.env.PORT || 3001;
 //     res.sendFile(path.join(__dirname, '/build', 'index.html'));
 // });
 
+const registerRouter = require('./routes/register')
+const loginRouter = require('./routes/login')
+const protectedRouter = require('./routes/protoctedRoute')
+const avatarRouter = require('./routes/avatar')
+
+app.use('/api/v1/protected-route', protectedRouter)
+app.use('/api/v1/register', registerRouter)
+app.use('/api/v1/login', loginRouter)
+app.use('/api/v1/upload-avatar', avatarRouter)
 
 app.listen(PORT, () => {
     console.log(`Server working on Port ${PORT}`);

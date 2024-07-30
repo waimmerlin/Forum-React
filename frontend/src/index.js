@@ -5,6 +5,7 @@ import "./styles/login.css"
 import "./styles/main.css"
 import "./styles/register.css"
 import "./styles/Header.css";
+import "./styles/profile.css";
 
 import { BrowserRouter } from "react-router-dom";
 

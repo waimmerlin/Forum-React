@@ -41,7 +41,7 @@ function Register() {
 
         if (checked && (values.password === values.confirmPassword)) {
             try {
-                const response = await axios.post(`/api/v1/register`, { values });
+                const response = await axios.post(`/api/v1/register`, { ...values });
                 if (response.data.status === 'Success') {
                     navigate('/login');
                 } else {
@@ -59,8 +59,8 @@ function Register() {
 
         if (!values.username) {
             errors.username = "Username is required";
-        } else if (values.username.length < 6 || values.username.length > 10) {
-            errors.username = "Username must be at least 6 and no more than 10 characters";
+        } else if (values.username.length < 6 || values.username.length > 16) {
+            errors.username = "Username must be at least 6 and no more than 16 characters";
         }
 
         if (!values.email) {

@@ -1,34 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Cookies from "js-cookie"
 import Avatar from './Avatar';
+import axios from 'axios';
 import profilePicture from "../../assets/images/Mariposa.jpg"
 import { NavLink } from 'react-router-dom';
 
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { useAuth } from '../../hooks/useAuth';
+
 const NavMenu = () => {
+  const { user } = useAuth()
+
   return (
     <nav className="nav-menu">
       <ul>
         <li>
-          <NavLink to="/" exact activeClassName="active-link">Главная</NavLink>
+          <NavLink to="/categories" activeClassName="active-link">Articles</NavLink>
         </li>
         <li>
-          <NavLink to="/categories" activeClassName="active-link">Категории</NavLink>
+          <NavLink to="/new-topics" activeClassName="active-link">Socials</NavLink>
         </li>
         <li>
-          <NavLink to="/new-topics" activeClassName="active-link">Новые темы</NavLink>
+          <NavLink to="/messages" activeClassName="active-link">Messages</NavLink>
         </li>
         <li>
-          <NavLink to="/popular-topics" activeClassName="active-link">Популярные темы</NavLink>
-        </li>
-        <li>
-          <NavLink to="/messages" activeClassName="active-link">Сообщения</NavLink>
-        </li>
-        <li>
-          <NavLink to="/notifications" activeClassName="active-link">Уведомления</NavLink>
-        </li>
-        <li>
-          <NavLink to="/profile" activeClassName="active-link">
-            <Avatar src={profilePicture} alt="User Avatar" />
-          </NavLink>
+          {
+            user ? 
+            <div className='nav-profile'>
+              <NavLink to="/notifications" activeClassName="active-link">{IoMdNotificationsOutline}</NavLink>
+              <NavLink to="/profile" activeClassName="active-link" className="user-box">
+                <span>{user.username}</span>
+                <Avatar src={`data:image/*;base64,${user.avatar}`} alt="User Avatar" />
+              </NavLink>
+            </div>
+
+            :
+            <NavLink to="/login" activeClassName="active-link">
+              Sign In
+            </NavLink>
+          }
         </li>
       </ul>
     </nav>

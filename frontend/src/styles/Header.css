@@ -1,10 +1,10 @@
 /* src/components/Header.css */
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-
     background-color: var(--containers-bg);
     color: var(--text-color);
 }
@@ -69,4 +69,19 @@ body.light-mode .header {
 body.light-mode .theme-toggle-button {
   border: 1px solid #000;
   color: #000;
+}
+
+.nav-menu .nav-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+}
+.nav-menu .nav-profile {
+  font-size: 1.5rem;
+}
+.nav-menu .nav-profile .user-box {
+  display: inline-flex;
+  align-items: center;
+  font-size: .9rem;
+  gap: .4rem;
 }

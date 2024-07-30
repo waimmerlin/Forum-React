@@ -38,7 +38,7 @@ function Login() {
         }
 
         try {
-            const response = await axios.post(`/api/v1/login`, { values });
+            const response = await axios.post(`/api/v1/login`, { ...values });
             if (response.data.status === 'Success') {
                 const { userData } = response.data;
                 await login(userData)
