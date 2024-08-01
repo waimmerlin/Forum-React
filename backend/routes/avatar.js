@@ -35,7 +35,7 @@ router.post('/', authMiddleware, upload.single('avatar'), async (req, res) => {
 
     dbMethodsUpdate.updateUserById(user.id, {avatar: buffer}, (err, result) => {
         if (err) res.status(500).send('Error uploading avatar');
-        res.json({status: "Success", message: 'Avatar uploaded and saved to database'});
+        res.json({status: "Success", message: 'Avatar uploaded and saved to database', buffer: Buffer.from(buffer).toString('base64')});
     })
 })
 router.get('/', authMiddleware, async (req, res) => {

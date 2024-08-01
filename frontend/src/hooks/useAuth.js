@@ -19,6 +19,11 @@ export const AuthProvider = ({ children }) => {
   const removeUser = () => {
     setUser(null);
   }
+
+  const changeUserAvatar = (avatar) => {
+    setUser(prev => ({ ...prev, avatar: avatar }));
+  }
+
   const logout = () => {
     setUser(null);
     Cookies.remove('Access_token');
@@ -57,6 +62,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     refreshToken,
     removeUser,
+    changeUserAvatar,
     loading,
   }), [user, loading]);
 
