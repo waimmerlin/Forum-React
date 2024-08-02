@@ -1,7 +1,7 @@
 .profile {
     display: inline-flex;
     color: var(--text-color);
-    margin-top: 3%;
+    margin-top: 64px;
     width: 100%;
     gap: 1.5rem;
 }
@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 16px;
     background-color: var(--containers-bg);
 }
 .profile .side-bar .user-information img {
-    border-radius: 10px;
+    border-radius: 12px;
     width: 200px;
 }
 .profile .side-bar .user-information button {
@@ -43,10 +43,10 @@
     gap: .3rem;
     color: #fff;
     cursor: pointer;
-    margin-top: 6%;
+    margin-top: 12px;
     padding: .5rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 4px;
     background: var(--buttons-bg);
     &:hover {
         background: var(--buttons-bg-hover);
@@ -55,9 +55,30 @@
 .profile .user-details {
     background-color: var(--containers-bg);
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 16px;
 }
 .profile .user-details .details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.profile .user-details .details .deatils-block {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.profile .user-details .details .deatils-block .icon-details-block {
+    font-size: 2rem;
+    background: var(--buttons-bg);
+    color: var(--text-color);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.profile .user-details .details .deatils-block .details-info { 
     display: flex;
     flex-direction: column;
 }

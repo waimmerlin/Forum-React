@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
     refreshToken,
     removeUser,
     changeUserAvatar,
-    loading,
+    loading
   }), [user, loading]);
 
   return (

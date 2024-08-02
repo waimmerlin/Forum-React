@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Cookies from "js-cookie"
 import axios from "axios";
 import { useAuth } from "../hooks/useAuth";
+import "../styles/profile.css"
 
 import { FaShare, FaUser, FaLayerGroup } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
+import Spinner from "../components/Spinner";
 
 
 function Profile() {
@@ -60,9 +62,29 @@ function Profile() {
             </div>
             <div className="user-details">
                 <div className="details">
-                    <span><FaUser /> Username: {user.username}</span>
-                    <span><FaLayerGroup /> Role: {user.role}</span>
-                    <span><MdDateRange /> CreatAt: {user.registerDate.slice(0, 10)}</span>
+                    <div className="deatils-block">
+                        <FaUser className="icon-details-block"/>
+                        <div className="details-info">
+                            <span>Username</span>
+                            <span>{user.username}</span>
+                        </div>
+                    </div>
+
+                    <div className="deatils-block">
+                        <FaLayerGroup className="icon-details-block"/>
+                        <div className="details-info">
+                            <span>Role</span>
+                            <span>{user.role}</span>
+                        </div>
+                    </div>
+
+                    <div className="deatils-block">
+                        <MdDateRange className="icon-details-block"/>
+                        <div className="details-info">
+                            <span>CreatAt</span>
+                            <span>{user.registerDate.slice(0, 10)}</span>
+                        </div>
+                    </div>
                 </div>
                 <div className="statistic" >
                     Sympathy: 11

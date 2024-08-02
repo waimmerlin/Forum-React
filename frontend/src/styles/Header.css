@@ -18,6 +18,20 @@
 }
 
 /* src/components/NavMenu.css */
+.nav-menu-toggler {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav-menu ul li {
+    display: none;
+  }
+  .nav-menu-toggler {
+    display: block;
+  }
+}
+
 .nav-menu ul {
     display: flex;
     align-items: center;
